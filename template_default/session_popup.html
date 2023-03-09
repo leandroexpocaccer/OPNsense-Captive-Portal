@@ -47,7 +47,7 @@
                     var timer = setInterval(updateTimeLeft, 60000);
                 }
             }).fail(function() {
-                $("#errorMSGtext").html("unable to connect to authentication server");
+                $("#errorMSGtext").html("Não foi possível conectar ao servidor de autenticação.");
                 $("#alertMSG").removeClass("hidden");
             });
 
@@ -81,7 +81,7 @@
                     // refresh page
                     window.location.reload();
                 }).fail(function() {
-                    $("#errorMSGtext").html("unable to connect to authentication server");
+                    $("#errorMSGtext").html("Não foi possível conectar ao servidor de autenticação.");
                     $("#alertMSG").removeClass("hidden");
                 });
             });
@@ -110,14 +110,14 @@
         <main class="page-content col-sm-6 col-sm-push-3">
             <div id="logout_frm" align="center">
                 <form class="form-signin">
-                    <h4>Time remaining on voucher:</h4>
-                    <h5><i class="glyphicon glyphicon-hourglass"></i>&nbsp;<span id="time_remaining">? days, ? hours, ? minutes</span></h5>
+                    <h4>Caso queira se desconectar, clique no botão abaixo (ou feche esta janela)</h4>
+                    <h5><i class="glyphicon glyphicon-hourglass"></i>&nbsp;<span id="time_remaining"></span></h5>
                     <!-- Message dialog -->
                     <div class="alert alert-danger alert-dismissible hidden" role="alert" id="alertMSG">
                         <button type="button" class="close" id="btnCloseError" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <span id="errorMSGtext">Sample error message</span>
                     </div>
-                    <button class="btn btn-primary btn-block" id="logoff" type="button">Logout</button>
+                    <button class="btn btn-primary btn-block" id="logoff" type="button">Desconectar</button>
                 </form>
 
             </div>
