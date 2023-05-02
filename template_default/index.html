@@ -21,16 +21,7 @@
     <script type="text/javascript" src="js/zone.js"></script>
    
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <script>
-        var inputBtn = document.getElementById("inputPassword");
-        inputBtn.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-            //  event.preventDefault();
-            //  document.getElementById("signin").click();
-            $("#signin").click();
-          }
-      });
-    </script>
+   
     <script>
         function getURLparams() {
             var vars = [],
@@ -48,6 +39,13 @@
             /**
              * logon action
              */
+             $("#inputPassword").keyup(function(event) {
+                 if (event.keyCode === 13) {
+                    $("#signin").click();
+                }
+             });
+
+
             $("#signin").click(function(event) {
                 event.preventDefault();
                 // hide alerts
