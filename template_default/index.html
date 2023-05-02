@@ -23,11 +23,11 @@
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script>
         var inputBtn = document.getElementById("inputPassword");
-      inputBtn.addEventListener("keyup", function(event) {
+        inputBtn.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
-              event.preventDefault();
-              document.getElementById("signin").click();
-              document.getElementById("signin_anon").click();
+            //  event.preventDefault();
+            //  document.getElementById("signin").click();
+            $("#signin").click();
           }
       });
     </script>
