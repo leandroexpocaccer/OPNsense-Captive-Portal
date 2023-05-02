@@ -19,7 +19,15 @@
 
     <!-- static zone info -->
     <script type="text/javascript" src="js/zone.js"></script>
-
+    <script>
+        var input = document.getElementById("inputPassword");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("signin").click();
+            }
+        });
+    </script>
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script>
         function getURLparams() {
@@ -54,13 +62,14 @@
                 }).done(function(data) {
                     // redirect on successful login
                     if (data['clientState'] == 'AUTHORIZED') {
-                        window.open("session_popup.html", "Session Status & Logout", "width=400, height=400");
-                        if (getURLparams()['redirurl'] != undefined) {
-                            window.location = 'http://' + getURLparams()['redirurl'] + '?refresh';
-                        } else {
+                        //window.open("session_popup.html", "Session Status & Logout", "width=400, height=400");
+                        //if (getURLparams()['redirurl'] != undefined) {
+                        //    window.location = 'http://' + getURLparams()['redirurl'] + '?refresh';
+                        //} else {
                             // no target, reload page
-                            window.location.reload();
-                        }
+                        //    window.location.reload();
+                        window.location = 'https://expocaccer.com.br?refresh';
+                        //}
                     } else {
                         $("#inputUsername").val("");
                         $("#inputPassword").val("");
@@ -92,12 +101,12 @@
                 }).done(function(data) {
                     // redirect on successful login
                     if (data['clientState'] == 'AUTHORIZED') {
-
-                        if (getURLparams()['redirurl'] != undefined) {
-                            window.location = 'http://' + getURLparams()['redirurl'] + '?refresh';
-                        } else {
-                            window.location.reload();
-                        }
+                        //if (getURLparams()['redirurl'] != undefined) {
+                        //    window.location = 'http://' + getURLparams()['redirurl'] + '?refresh';
+                        //} else {
+                        //    window.location.reload();
+                        // }
+                        window.location = 'https://expocaccer.com.br?refresh';
                     } else {
                         $("#inputUsername").val("");
                         $("#inputPassword").val("");
@@ -177,7 +186,7 @@
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <img class="brand-logo" src="images/default-logo.png">
                     <h1>Autenticação</h1>
-                    <div class="description">Ao entrar com suas credenciais, você automaticamente concorda com nossa política de acesso e regimento interno de segurança da informação. Mais informações: suporte@expocaccer.com.br</div>
+                    <div class="description">Ao entrar com suas credenciais, você automaticamente concorda com nossa política de acesso e regimento interno de segurança da informação. Mais informações contate-nos pelo e-mail: suporte@expocaccer.com.br</div>
                 </div>
             </div>
         </header>
@@ -189,23 +198,23 @@
                         <form class="form-signin">
                             <div class="form-signin-heading">
                                 <h3>Entrar com credenciais</h3>
-                                <p>Entre com usuário e senha para continuar:</p>
+                                <p>Usuário e senha utilizados no Active Directory/Computador:</p>
                             </div>
                             <div class="form-group">
-                                <label for="inputUsername" class="sr-only">Usuário</label>
+                                <label for="inputUsername" class="sr-only">Usuário (primeiro.ultimo nomes, ex: O usuário Ricardo Silva Ribeiro, seria ricardo.ribeiro)</label>
                                 <input type="text" id="inputUsername" class="form-control" placeholder="Usuário" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword" class="sr-only">Senha</label>
                                 <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
                             </div>
-                            <button class="btn btn-primary btn-block" id="signin" type="button">Autenticar</button>
+                            <button class="btn btn-primary btn-block" id="signin" type="button">Conectar</button>
                         </form>
                     </div>
                     <!-- User option 2: login needed, without username, password -->
                     <div id="login_none" class="form-box hidden">
                         <form class="form-signin">
-                            <button class="btn btn-primary btn-block" id="signin_anon" type="button">Autenticar</button>
+                            <button class="btn btn-primary btn-block" id="signin_anon" type="button">Conectar</button>
                         </form>
                     </div>
                     <!-- User option 3: Already logged in, show logout button -->
