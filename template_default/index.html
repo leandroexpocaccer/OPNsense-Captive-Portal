@@ -20,11 +20,11 @@
     <!-- static zone info -->
     <script type="text/javascript" src="js/zone.js"></script>
     <script>
-          var input = document.getElementById("inputPassword");
+          var input = document.getElementById("#inputPassword");
         input.addEventListener("keyup", function(event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
-                document.getElementById("signin").click();
+                document.getElementById("#signin").click();
             }
         });
     </script>
@@ -197,11 +197,11 @@
                     <div id="login_password" class="form-box hidden">
                         <form class="form-signin">
                             <div class="form-signin-heading">
-                                <h3>Entrar com credenciais</h3>
+                                <h3>Digitar credenciais</h3>
                                 <p>Usuário e senha utilizados no Active Directory/Computador:</p>
                             </div>
                             <div class="form-group">
-                                <label for="inputUsername" class="sr-only">Usuário (primeiro.ultimo nomes, ex: O usuário Ricardo Silva Ribeiro, seria ricardo.ribeiro)</label>
+                                <label for="inputUsername" class="sr-only">"Usuário (primeiro.ultimo nomes, ex: O usuário Ricardo Silva Ribeiro, seria ricardo.ribeiro)"</label>
                                 <input type="text" id="inputUsername" class="form-control" placeholder="Usuário" required autofocus>
                             </div>
                             <div class="form-group">
