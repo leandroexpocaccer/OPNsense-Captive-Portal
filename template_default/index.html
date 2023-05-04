@@ -45,6 +45,12 @@
                 }
              });
 
+             $("#inputUsername").keyup(function(event) {
+                 if (event.keyCode === 13) {
+                    $("#signin").click();
+                }
+             });
+
 
             $("#signin").click(function(event) {
                 event.preventDefault();
@@ -68,7 +74,7 @@
                         //} else {
                             // no target, reload page
                         //    window.location.reload();
-                        window.location = 'https://expocaccer.com.br?refresh';
+                        window.location = 'https://expocaccer.com.br';
                         //}
                     } else {
                         $("#inputUsername").val("");
@@ -106,7 +112,7 @@
                         //} else {
                         //    window.location.reload();
                         // }
-                        window.location = 'https://expocaccer.com.br?refresh';
+                        window.location = 'https://expocaccer.com.br';
                     } else {
                         $("#inputUsername").val("");
                         $("#inputPassword").val("");
